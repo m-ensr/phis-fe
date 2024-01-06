@@ -4,7 +4,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)
 
 def send_email(sender, recipient, app_password, subject, content):
@@ -20,10 +20,10 @@ def send_email(sender, recipient, app_password, subject, content):
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
             server.starttls()
 
-           
+            # Uygulama özel şifre ile giriş yap
             server.login(sender, app_password)
 
-           
+            # E-postayı gönder
             server.sendmail(sender, recipient, message.as_string())
 
         return {'status': 'success', 'message': 'E-posta başarıyla gönderildi.'}
@@ -35,8 +35,8 @@ def send_email(sender, recipient, app_password, subject, content):
 def send_email_route():
     try:
         data = request.get_json()
-        sender_email = "*****"  # Add your sender e-mail
-        sender_app_password = "*************"  # Add your private key
+        sender_email = "xaetch@gmail.com"
+        sender_app_password = "ltgh rovm xrrf mmiv"  # Uygulama özel şifrenizi buraya ekleyin
         recipient_email = data.get('recipientEmail')
         email_subject = "Hesabınıza yakın zamanda erişim denendi."
         email_content = "Eğer bunu yapan siz değilseniz, lütfen aşağıdaki linkten bağlantıya tıklayın:"
@@ -48,5 +48,5 @@ def send_email_route():
     except Exception as e:
         return jsonify({'status': 'error', 'message': f'Hata oluştu: {str(e)}'})
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
