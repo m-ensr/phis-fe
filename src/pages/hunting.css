@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap");
+
+.email-sender-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.email-sender-container label {
+  font-family: "Oswald", sans-serif;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.email-sender-container input {
+  font-family: "Oswald", sans-serif;
+  padding: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+
+.email-sender-container button {
+  font-family: "Oswald", sans-serif;
+  padding: 8px 12px;
+  background-color: #a22538;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.email-sender-container button:hover {
+  background-color: red;
+}
+
+.api-response {
+  font-family: "Oswald", sans-serif;
+  margin-left: 150px;
+  font-size: 25px;
+}
+
+.rods {
+  flex: 4;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.rodsImg {
+  margin-left: 110px;
+  margin-top: 80px;
+  height: 250px;
+  width: 250px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  opacity: 0.2;
+}
+
+.rodsImg:hover {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+.rodsImg:active,
+.rodsImg.selected {
+  transform: scale(0.9);
+  opacity: 1;
+}
+
+.trapTitle {
+  font-family: "Oswald", sans-serif;
+  margin-top: 50px;
+  margin-left: 650px;
+  color: #a22538;
+}
