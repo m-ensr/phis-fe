@@ -5,6 +5,7 @@ import FacebookLogin from './pages/Facebook/FacebookLogin';
 import Topbar from './components/topbar/Topbar';
 import Home from './pages/home/Home';
 import About from './pages/about/about';
+import './App.css';
 
 function App() {
   return (
