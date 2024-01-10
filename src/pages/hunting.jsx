@@ -51,10 +51,6 @@ function Hunting() {
             onChange={handleEmailChange}
           />
         </label>
-        <label>
-          Your mail:
-          <input type="email" />
-        </label>
         <button onClick={handleSendEmail}>Send Email</button>
 
         {apiResponse && (
@@ -66,7 +62,7 @@ function Hunting() {
         )}
       </div>
 
-      <h1 className="trapTitle">Choose your trap !</h1>
+      <h1 className="trapTitle">Choose how to phish the target:</h1>
 
       <div className="rods">
         <img
