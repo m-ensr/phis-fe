@@ -51,7 +51,8 @@ function Hunting() {
             onChange={handleEmailChange}
           />
         </label>
-        <button onClick={handleSendEmail}>Send Email</button>
+
+        <button onClick={handleSendEmail}>Phish</button>
 
         {apiResponse && (
           <div className="api-response">
