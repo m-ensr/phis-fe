@@ -4,7 +4,7 @@ import './topbar.css';
 
 function Topbar() {
   const handleLinkClick = (path) => {
-    window.location.href = path; // Yeni sayfaya yönlendirme
+    window.location.href = path;
   };
 
   return (
