@@ -34,11 +34,9 @@ function Hunting() {
 
       setTimeout(() => {
         setRecipientEmail("");
-      }, 5000);
-
-      setTimeout(() => {
         setApiResponse(null);
-      }, 5000);
+        setSelectedRod(null);
+      }, 3000);
     } catch (error) {
       console.error("Error sending email:", error);
     }
