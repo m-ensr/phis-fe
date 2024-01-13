@@ -14,7 +14,7 @@ function Hunting() {
   const handleSendEmail = async () => {
     if (selectedRod === null) {
       alert("Please choose a trap before sending the email!");
-      return; // Seçili bir trap yoksa, fonksiyonu burada sonlandır
+      return;
     }
 
     try {
