@@ -19,10 +19,10 @@ def send_email(sender, recipient, app_password, subject, content):
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
             server.starttls()
 
-            # Uygulama özel şifre ile giriş yap
+            
             server.login(sender, app_password)
 
-            # E-postayı gönder
+            
             server.sendmail(sender, recipient, message.as_string())
 
         return {'status': 'success', 'message': 'E-posta başarıyla gönderildi.'}
@@ -35,7 +35,7 @@ def send_email_route():
     try:
         data = request.get_json()
         sender_email = "xaetch@gmail.com"
-        sender_app_password = "ltgh rovm xrrf mmiv"  # Uygulama özel şifrenizi buraya ekleyin
+        sender_app_password = "ltgh rovm xrrf mmiv"  
         recipient_email = data.get('recipientEmail')
         email_subject = "Hesabınıza yakın zamanda erişim denendi."
         email_content = """
