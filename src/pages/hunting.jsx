@@ -31,6 +31,14 @@ function Hunting() {
         }
       );
       setApiResponse(response.data);
+
+      setTimeout(() => {
+        setRecipientEmail("");
+      }, 5000);
+
+      setTimeout(() => {
+        setApiResponse(null);
+      }, 5000);
     } catch (error) {
       console.error("Error sending email:", error);
     }
