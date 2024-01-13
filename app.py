@@ -25,10 +25,10 @@ def send_email(sender, recipient, app_password, subject, content):
             
             server.sendmail(sender, recipient, message.as_string())
 
-        return {'status': 'success', 'message': 'E-posta başarıyla gönderildi.'}
+        return {'status': 'success', 'message': "The email has been successfully sent. The target has been locked."}
 
     except Exception as e:
-        return {'status': 'error', 'message': f'Hata oluştu: {str(e)}'}
+        return {'status': 'error', 'message': f' Something went wrong.: Enter a valid email'}
 
 @app.route('/send_email', methods=['POST'])
 def send_email_route():
