@@ -9,7 +9,6 @@ CORS(app)
 
 def send_email(sender, recipient, app_password, subject, content):
     try:
-        
         message = MIMEMultipart()
         message['From'] = sender
         message['To'] = recipient
@@ -18,18 +17,11 @@ def send_email(sender, recipient, app_password, subject, content):
         
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
             server.starttls()
-
-            
             server.login(sender, app_password)
-
-            
             server.sendmail(sender, recipient, message.as_string())
-
         return {'status': 'success', 'message': "The email has been successfully sent. The target has been locked."}
-
     except Exception as e:
         return {'status': 'error', 'message': f' Something went wrong.: Enter a valid email'}
-
 @app.route('/send_email', methods=['POST'])
 def send_email_route():
     try:    
